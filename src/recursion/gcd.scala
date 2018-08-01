@@ -8,5 +8,4 @@ object gcd extends App {
   }
 
   println(gcd(122,66))
-
 }
