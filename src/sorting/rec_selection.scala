@@ -1,12 +1,12 @@
 package sorting
 
-object rec_bubble extends App {
+object rec_selection extends App {
   import scala.collection.mutable.ArrayBuffer
 
   val arr = ArrayBuffer(101,222,30,4,12,34,23,35,6,2,324,5234,354)
   val length = arr.length
 
-  def rec_bubble(done_elems:Int, partially_sorted_arr:ArrayBuffer[Int]){
+  def rec_selection(done_elems:Int, partially_sorted_arr:ArrayBuffer[Int]){
       //println("done elems"+done_elems)
       println(partially_sorted_arr)
 
@@ -21,11 +21,11 @@ object rec_bubble extends App {
           }
       }
     //recursive call with done sorted index
-      rec_bubble(done_elems+1, partially_sorted_arr)
+      rec_selection(done_elems+1, partially_sorted_arr)
   }
 
   println(arr)
-  rec_bubble(0,arr)
+  rec_selection(0,arr)
   println(arr)
 
 }
