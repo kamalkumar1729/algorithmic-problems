@@ -1,5 +1,6 @@
 package strings
 
+
 object first_non_repeating extends App {
 
   import scala.collection.mutable.Map
@@ -11,6 +12,12 @@ object first_non_repeating extends App {
     val freq = Map.empty[Char,(Int,Int)]
 
     /**
+      *
+      * store count map and first index
+      * No need to traverse array again
+      *
+      *
+      *
     * if( c => not present in map)
     *    add c in map, count = 1, first_index= i
     * else
@@ -19,7 +26,10 @@ object first_non_repeating extends App {
     * */
 
 
-    for(i <- 0 to s.length-1){
+
+  // index is needed range is a must.
+
+    for(i <- 0 until s.length){
       if(freq.contains(s.charAt(i))) {
         freq(s.charAt(i)) = (freq(s.charAt(i))._1 + 1, freq(s.charAt(i))._2)
       }
@@ -28,9 +38,19 @@ object first_non_repeating extends App {
       }
     }
 
+
+
+
+
    // s.foreach(ch => { if(freq.contains(ch)) freq(ch)+=1  else freq(ch)=1 })
 
     var non_rep_index = s.length
+
+    for((k,v) <- freq){
+      println(k+"::"+v)
+    }
+
+
 
    freq.foreach(keyVal => {
 
@@ -52,9 +72,6 @@ object first_non_repeating extends App {
     else
       non_rep_index
   }
-
-
-
 
 
 
