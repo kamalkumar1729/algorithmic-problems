@@ -5,6 +5,7 @@ public class Power {
         System.out.println(findPower(2,5));
     }
 
+
     private static long findPower(long n, long p) {
         if (p==0) return 1;
         else return n*findPower(n,p-1);
